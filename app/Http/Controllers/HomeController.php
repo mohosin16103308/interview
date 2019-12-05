@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Auth;
 
 use Bulkly\User;
 
+use DB;
+
+use Bulkly\SocialPostGroups;
+
 use Bulkly\SocialAccounts;
 
 use Bulkly\BufferPosting;
@@ -39,7 +43,10 @@ class HomeController extends Controller
 
 
 public function newmenu(){
-    return "Hello";
+
+    $posts = BufferPosting::limit(20)->get();
+    // return $posts;
+    return view("mohosin.index",compact("posts"));
 }
 
 
