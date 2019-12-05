@@ -79,7 +79,7 @@ Route::get('/', 'HomeController@index')->name('home');
 // Mohosin ***************  added New Menu
 Route::get('/newmenu','HomeController@newmenu')->name('newmenu');
 
-
+Route::post('/newmenu_search','HomeController@newmenu_search')->name('newmenu_search');
 
 Route::get('/buffer/change/{buffer_id}', 'HomeController@bufferChange')->name('bufferChange');
 Route::resource('subscriptions', 'SubscriptionController');

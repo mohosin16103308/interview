@@ -44,11 +44,17 @@ class HomeController extends Controller
 
 public function newmenu(){
 
-    $posts = BufferPosting::limit(20)->get();
+    $posts = BufferPosting::paginate(15);
     // return $posts;
     return view("mohosin.index",compact("posts"));
 }
 
+public function newmenu_search(Request $request){
+
+    $posts = BufferPosting::where('post_text', 'LIKE', '%' . $request->search . '%')->paginate(15);
+    // return $posts;
+    return view("mohosin.index",compact("posts"));
+}
 
 
     /**

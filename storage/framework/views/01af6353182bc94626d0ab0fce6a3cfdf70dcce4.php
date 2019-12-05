@@ -6,6 +6,22 @@ use Bulkly\SocialAccounts;
 ?>
     <div class="container-fluid app-body">
         <div class="row">
+        
+    <div class='col-sm-3'>
+    <form action="<?php echo e(route('newmenu_search')); ?>" method="POST">
+        <?php echo e(csrf_field()); ?>
+
+      <div class="form-group">          
+          <!-- Datepicker as text field -->         
+          <div class="input-group" >
+            <input  type="text" name="search" class="form-control" placeholder="Search using Post ">
+            <input type="submit" value="Send">
+          </div>
+          
+        </div> 
+</div>
+      </div>
+
         <table class="table">
   <thead>
     <tr>
@@ -68,8 +84,14 @@ use Bulkly\SocialAccounts;
     <?php }  ?>
   </tbody>
 </table>
+
+<div class="div" style="float:right"><?php echo e($posts->links()); ?></div>
+
     <script>
-        var allSelection = 0;
+    
+ 
+ 
+         var allSelection = 0;
         // ==========================
         // Group wise Group Delete
         // ==========================
