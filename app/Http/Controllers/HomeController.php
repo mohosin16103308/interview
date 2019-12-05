@@ -37,6 +37,13 @@ class HomeController extends Controller
 
     }
 
+
+public function newmenu(){
+    return "Hello";
+}
+
+
+
     /**
      * Show the application dashboard.
      *
